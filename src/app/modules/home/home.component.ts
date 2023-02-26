@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
+import { MessageService } from 'primeng/api';
+import { JogadorService } from 'src/app/shared/services/jogador.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +10,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  createUserForm = this.fb.group({
+    nickname: ['', [Validators.required]],
+    password: ['', [Validators.required, Validators.min(4), Validators.max(10)]]
+  })
+
+  constructor(
+    private fb: FormBuilder,
+    private jogadorService: JogadorService,
+    private toast: MessageService
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  registerUser(){
+    this.jogadorService.register(
+      this.createUserForm.value.nickname,
+      this.createUserForm.value.password
+    ).subscribe(() => {
+      this.toast.add({
+        severity:'success',
+        detail:'Jogador cadastrado com sucesso!'
+      })
+    })
   }
 
 }

@@ -13,6 +13,9 @@ import { ModulesModule } from './modules/modules.module';
 import {InputTextModule} from 'primeng/inputtext';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StefamonService } from './shared/services/stefamon.service';
+import {ToastModule} from 'primeng/toast';
+import { JogadorService } from './shared/services/jogador.service';
+
 
 
 @NgModule({
@@ -31,9 +34,13 @@ import { StefamonService } from './shared/services/stefamon.service';
     ButtonModule,
     MenubarModule,
     InputTextModule,
+    ToastModule,
     ModulesModule
   ],
-  providers: [StefamonService],
+  providers: [
+    StefamonService,
+    JogadorService
+  ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
