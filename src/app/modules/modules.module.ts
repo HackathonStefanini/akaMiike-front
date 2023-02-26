@@ -8,7 +8,6 @@ import { MenubarModule } from 'primeng/menubar';
 import {TableModule} from 'primeng/table';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
-import { MessageModule } from 'primeng/message';
 
 @NgModule({
   declarations: [
@@ -23,8 +22,7 @@ import { MessageModule } from 'primeng/message';
     ReactiveFormsModule,
     FormsModule,
     InputTextModule,
-    TableModule,
-    MessageModule
+    TableModule
   ]
 })
 export class ModulesModule { }

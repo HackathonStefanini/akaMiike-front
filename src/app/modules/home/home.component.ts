@@ -17,8 +17,7 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private jogadorService: JogadorService,
-    private toast: MessageService
+    private jogadorService: JogadorService
   ) { }
 
   ngOnInit(): void {
@@ -29,10 +28,7 @@ export class HomeComponent implements OnInit {
       this.createUserForm.value.nickname,
       this.createUserForm.value.password
     ).subscribe(() => {
-      this.toast.add({
-        severity:'success',
-        detail:'Jogador cadastrado com sucesso!'
-      })
+      alert("Usuário cadastrado com sucesso.")
     })
   }
 

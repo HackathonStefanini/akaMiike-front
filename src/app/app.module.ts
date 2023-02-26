@@ -17,7 +17,6 @@ import {ToastModule} from 'primeng/toast';
 import { JogadorService } from './shared/services/jogador.service';
 
 
-
 @NgModule({
   declarations: [
     AppComponent
@@ -35,7 +34,7 @@ import { JogadorService } from './shared/services/jogador.service';
     MenubarModule,
     InputTextModule,
     ToastModule,
-    ModulesModule
+    ModulesModule,
   ],
   providers: [
     StefamonService,
