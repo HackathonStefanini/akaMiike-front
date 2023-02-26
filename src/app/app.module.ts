@@ -5,28 +5,35 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
-import { StefamonComponent } from './modules/stefamon/stefamon.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
 import {MenubarModule} from 'primeng/menubar';
+import { ModulesModule } from './modules/modules.module';
+import {InputTextModule} from 'primeng/inputtext';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { StefamonService } from './shared/services/stefamon.service';
+
 
 @NgModule({
   declarations: [
-    AppComponent,
-    StefamonComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
     SharedModule,
     CardModule,
     ButtonModule,
     MenubarModule,
+    InputTextModule,
+    ModulesModule
   ],
-  providers: [],
+  providers: [StefamonService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

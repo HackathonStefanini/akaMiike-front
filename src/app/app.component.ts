@@ -15,6 +15,8 @@ export class AppComponent implements OnInit {
 
     this.items = [
       {label: 'Stefamon', disabled: true},
+      {label: 'Home', icon:'pi pi-home', routerLink:'/home'},
+      {label: 'Loja', icon: 'pi pi-shopping-cart', routerLink: '/loja'}
     ];
   }
 }

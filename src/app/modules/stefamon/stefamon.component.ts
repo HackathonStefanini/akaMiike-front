@@ -5,7 +5,7 @@ import { StefamonService } from '../../shared/services/stefamon.service';
   selector: 'app-stefamon',
   templateUrl: './stefamon.component.html',
   styleUrls: ['./stefamon.component.css'],
-  providers: [StefamonService]
+  providers: []
 })
 export class StefamonComponent implements OnInit {
 
@@ -16,7 +16,7 @@ export class StefamonComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.stefamonService.list().subscribe(res => {
+    this.stefamonService.listAll().subscribe(res => {
       this.stefamonList = res;
     });
   }
